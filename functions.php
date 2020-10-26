@@ -9,3 +9,14 @@ function university_files() {
 
 add_action('wp_enqueue_scripts', 'university_files');
 
+function university_features() {
+  # Add support for the HTML title tag being controlled by the WP admin dashboard
+  add_theme_support('title-tag');
+  # Enable menus in the WordPress dashboard
+  register_nav_menu('headerMenuLocation', 'Header Menu Location' );
+  register_nav_menu('footerLocationOne', 'Footer Location One' );
+  register_nav_menu('footerLocationTwo', 'Footer Location Two' );
+}
+
+# execute the university_features function after the theme is enabled
+add_action('after_setup_theme', 'university_features');
