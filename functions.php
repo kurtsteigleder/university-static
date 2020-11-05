@@ -19,3 +19,7 @@ function university_features() {
 
 # execute the university_features function after the theme is enabled
 add_action('after_setup_theme', 'university_features');
+
+# execute the function university_post_types after the init hook
+add_action('init','university_post_types');
+
